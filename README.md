@@ -1,6 +1,4 @@
-# eslint-config
-
-Description
+# @netcentric/eslint-config
 
 [![Version](https://img.shields.io/npm/v/@netcentric/eslint-config.svg)](https://npmjs.org/package/@netcentric/eslint-config)
 [![Build Status](https://github.com/netcentric/eslint-config/workflows/CI/badge.svg?branch=main)](https://github.com/netcentric/eslint-config/actions)
@@ -8,66 +6,52 @@ Description
 [![semver: semantic-release](https://img.shields.io/badge/semver-semantic--release-blue.svg)](https://github.com/semantic-release/semantic-release)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## TLDR;
+If Eslint is new to you, you might want to check out [what it does](https://eslint.org/) and [how to configure it](https://eslint.org/docs/latest/use/getting-started).
 
-1. Create new repo from this Template
-   [![Template repo](https://docs.github.com/assets/images/help/repository/use-this-template-button.png)](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-2. Update Readme
-    - replace `@netcentric/eslint-config`  with new package_name
-3. Update package.json
-    - replace "name" `@netcentric/eslint-config`  with new package_name
-    - replace "repo" `netcentric/eslint-config`  with new package_name repo
-    - Add description, and other fields if needed
-4. Update LICENSE
-    - Update `[COMPANY` name
-    - Update year `[yyyy]`
-5. Update docs/CODE_OF_CONDUCT.md
-    - Update `<COMPANY>` name
-6. Activate automatic release
-    - disable `dry_run` in Release step in .github/workflows/release.yml.
+## Install
 
-## Content
-
-### Docs
-  - LICENSE
-  - docs/CODE_OF_CONDUCT.md
-  - docs/CONTRIBUTING.md
-  - docs/CHANGELOG.md --> dynamically updated
-
-### Issue template
-  - .github/ISSUE_TEMPLATE.md
-
-### PR template
-  - .github/PULL_REQUEST_TEMPLATE.md --> automatically closes connected issue
-
-### Workflows
-  - CI --> npm ci, test and build
-  - CodeQL --> Perform CodeQL Analysis (Security, etc.)
-  - Release --> semantic-release:
-    * Creates release notes
-    * Updates CHANGELOG
-    * Updates package.json version
-    * Creates Git tag/release
-    * Publish package to NPM
-  - Manual Release --> same as Release, but can be triggered manually in Actions tab
-
-### Release
-  - based on Angular Commit Message Conventions in commits -
-    https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit-message-header
-  - Commit message format is used to build:
-    * Release notes
-    * Changelog updates
-    * NPM package semver
-
-### Commit message Convention
-
-```
-<type>(<scope>): <short summary>
-│       │             │
-│       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
-│       │
-│       └─⫸ Commit Scope (optional): project|based|list
-│
-└─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+```bash
+npm i @netcentric/eslint-config
 ```
 
+## Setup
+
+### .eslintrc
+
+Create or update your `.eslintrc` file:
+
+```json
+{
+  "extends": "@netcentric/eslint-config"
+}
+```
+
+## IDE integration
+
+Most IDEs should have an [integration for Eslint](https://eslint.org/docs/latest/use/integrations).
+
+## Build system integration
+
+If you are using https://github.com/Netcentric/fe-build, eslint is integrated by default.
+
+For custom lint task, update `package.json`
+
+```json
+  "scripts": {
+    "lint:js": "eslint path/to/source-js-files"
+  }
+```
+
+Make sure you do not accidently lint files you are not interested that are out of scope for your build; e.g. files within the `node_modules` folder.
+
+## Overwriting rules
+
+Please stick to the Netcentric rules as they are battle tested and were created to form a company wide basis for JS code quality. If there's a very specific case you want to deactivate a rule for consider using [Eslint inline comments](https://eslint.org/docs/latest/use/configure/rules#disabling-rules) instead.
+
+If there's a rule you consider as outdated or simply wrong please contact the package's maintainer or file an issue in JIRA (`bugs` in `package.json`) or create a PR on the package's repository (`repository` in `package.json`).
+
+If you have a very project specific case where adding or deactivating a rule makes perfectly sense, you can overwrite any rule using the `rules` property.
+
+## I don't understand why I violated rule X
+
+You can find a description of all rules on the [Eslint Homepage](https://eslint.org/docs/latest/rules/).
