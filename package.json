@@ -1,7 +1,7 @@
 {
   "name": "@netcentric/eslint-config",
   "version": "1.0.0",
-  "description": "<Package description>",
+  "description": "Netcentric's coding and style rules for Eslint",
   "license": "Apache-2.0",
   "private": false,
   "publishConfig": {
@@ -9,13 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/netcentric/eslint-config"
+    "url": "https://github.com/Netcentric/eslint-config"
   },
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
   "keywords": [
-    "keyword"
+    "eslint",
+    "eslint-config",
+    "netcentric"
   ]
 }
