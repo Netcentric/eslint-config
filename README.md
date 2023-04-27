@@ -6,7 +6,9 @@
 [![semver: semantic-release](https://img.shields.io/badge/semver-semantic--release-blue.svg)](https://github.com/semantic-release/semantic-release)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-If Eslint is new to you, you might want to check out [what it does](https://eslint.org/) and [how to configure it](https://eslint.org/docs/latest/use/getting-started).
+This package provides Cognizant Netcentric's [ESLint](https://eslint.org) configuration as an extensible shared config.
+
+If ESLint is new to you, you might want to check out [what it does](https://eslint.org/) and [how to configure it](https://eslint.org/docs/latest/use/getting-started).
 
 ## Install
 
@@ -28,11 +30,11 @@ Create or update your `.eslintrc` file:
 
 ## IDE integration
 
-Most IDEs should have an [integration for Eslint](https://eslint.org/docs/latest/use/integrations).
+Most IDEs should have an [integration for ESLint](https://eslint.org/docs/latest/use/integrations).
 
 ## Build system integration
 
-If you are using https://github.com/Netcentric/fe-build, eslint is integrated by default.
+If you are using https://github.com/Netcentric/fe-build, ESLint is integrated by default.
 
 For custom lint task, update `package.json`
 
