@@ -25,7 +25,7 @@ module.exports = {
     ],
     indent: [
       'error',
-      2
+      4
     ],
     'global-require': 'off',
     'import/extensions': 'off',
