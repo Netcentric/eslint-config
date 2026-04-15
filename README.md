@@ -46,6 +46,18 @@ For custom lint task, update `package.json`
 
 Make sure you do not accidently lint files you are not interested that are out of scope for your build; e.g. files within the `node_modules` folder.
 
+## Upgrading
+
+### Import order sorting (upcoming enforcement)
+
+This config now warns about unsorted imports (`import/order`). Warnings will become errors in a future release, giving teams time to adopt the rule gradually.
+
+To auto-fix all import order warnings in your project at once, run:
+
+```bash
+npx eslint --fix path/to/source-js-files
+```
+
 ## Overwriting rules
 
 Please stick to the Netcentric rules as they are battle tested and were created to form a company wide basis for JS code quality. If there's a very specific case you want to deactivate a rule for consider using [Eslint inline comments](https://eslint.org/docs/latest/use/configure/rules#disabling-rules) instead.

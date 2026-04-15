@@ -1,8 +1,7 @@
 module.exports = {
   root: true,
   extends: [
-    'eslint-config-airbnb-base',
-    'plugin:import/recommended'
+    'eslint-config-airbnb-base'
   ],
   env: {
     es2020: true,
@@ -31,12 +30,7 @@ module.exports = {
       4
     ],
     'global-require': 'off',
-    'import/extensions': 'off',
     'class-methods-use-this': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    'import/no-unresolved': 'off',
-    'import/no-named-as-default': 1,
-    'import/prefer-default-export': 0,
     'func-names': 'off',
     'prefer-destructuring': 0,
     'implicit-arrow-linebreak': 0,
@@ -57,7 +51,7 @@ module.exports = {
     'no-trailing-spaces': 'off',
     'no-template-curly-in-string': 'off',
     'import/order': [
-      'error',
+      'warn',
       {
         'groups': ['builtin', 'external', 'internal', 'index', 'parent', 'sibling'],
         'pathGroupsExcludedImportTypes': ['builtin'],
