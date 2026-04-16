@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/Netcentric/eslint-config/compare/v1.0.0...v1.1.0) (2026-04-16)
+
+
+### Features
+
+* **config:** Add ESLint support for automatic import sorting ([c25060d](https://github.com/Netcentric/eslint-config/commit/c25060d063886031028e3b04927bc40c70715387))
+* Update ESLint configuration to warn on unsorted imports and remove unused dependencies ([bb134da](https://github.com/Netcentric/eslint-config/commit/bb134da6306299528665bcb1c210f008631048ac))
+
 # 1.0.0 (2023-05-15)
 
 
