@@ -11,7 +11,8 @@
     "type": "git",
     "url": "https://github.com/Netcentric/eslint-config"
   },
-  "main": "src/index.js",
+  "type": "module",
+  "exports": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
@@ -20,8 +21,14 @@
     "eslint-config",
     "netcentric"
   ],
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
   "dependencies": {
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "^2.27.5"
+    "eslint-config-airbnb-extended": "^3.3.0",
+    "globals": "^17.14.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
   }
 }
