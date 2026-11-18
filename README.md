@@ -10,22 +10,29 @@ This package provides Cognizant Netcentric's [ESLint](https://eslint.org) config
 
 If ESLint is new to you, you might want to check out [what it does](https://eslint.org/) and [how to configure it](https://eslint.org/docs/latest/use/getting-started).
 
+## Requirements
+
+- ESLint `^9.0.0`
+- Node.js `^18.18.0 || ^20.9.0 || >=21.1.0`
+
 ## Install
 
 ```bash
-npm i @netcentric/eslint-config
+npm i -D eslint@9 @netcentric/eslint-config
 ```
 
 ## Setup
 
-### .eslintrc
+### eslint.config.js
 
-Create or update your `.eslintrc` file:
+This package exports an ESLint [flat config](https://eslint.org/docs/latest/use/configure/configuration-files) array. Create an `eslint.config.js` (or `eslint.config.mjs` if your project is not an ES module) file:
 
-```json
-{
-  "extends": "@netcentric/eslint-config"
-}
+```js
+import netcentric from '@netcentric/eslint-config';
+
+export default [
+  ...netcentric
+];
 ```
 
 ## IDE integration
@@ -48,6 +55,18 @@ Make sure you do not accidently lint files you are not interested that are out o
 
 ## Upgrading
 
+### From 1.x to 2.0 (ESLint v9)
+
+- Only ESLint v9 flat config is supported. Replace your `.eslintrc` with an `eslint.config.js` as shown in [Setup](#setup).
+- The package is now ESM-only.
+- The Airbnb rules are now provided by [eslint-config-airbnb-extended](https://eslint-airbnb-extended.nishargshah.dev/config/legacy-config) (legacy config), a maintained drop-in replacement for `eslint-config-airbnb-base`.
+- `ecmaVersion` is now `latest` (was `2020`).
+- ESLint v9 changed the defaults of some rules:
+  - `no-unused-vars`: unused `catch` parameters are now reported. Use `catch {}` without a binding instead.
+  - `no-inner-declarations`: function declarations inside blocks are now allowed in strict mode (ES modules).
+  - `no-useless-computed-key`: unnecessary computed keys in classes are now reported.
+  - `no-constant-condition`: `while (true)` loops are no longer reported.
+
 ### Import order sorting (upcoming enforcement)
 
 This config now warns about unsorted imports (`import/order`). Warnings will become errors in a future release, giving teams time to adopt the rule gradually.
@@ -64,7 +83,20 @@ Please stick to the Netcentric rules as they are battle tested and were created 
 
 If there's a rule you consider as outdated or simply wrong please contact the package's maintainer or file an issue in JIRA (`bugs` in `package.json`) or create a PR on the package's repository (`repository` in `package.json`).
 
-If you have a very project specific case where adding or deactivating a rule makes perfectly sense, you can overwrite any rule using the `rules` property.
+If you have a very project specific case where adding or deactivating a rule makes perfectly sense, you can overwrite any rule by appending a config object:
+
+```js
+import netcentric from '@netcentric/eslint-config';
+
+export default [
+  ...netcentric,
+  {
+    rules: {
+      'no-console': 'off'
+    }
+  }
+];
+```
 
 ## I don't understand why I violated rule X
 
